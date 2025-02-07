@@ -22,17 +22,11 @@ export class AuthService {
         if (passwordMatched) {
             const { password, ...userWithoutPassword } = user; // Exclude password
             const payload : PayloadType = { email: user.email, userId: user.id };
-            // find if it is an artist then the add the artist id to payload
-            //const artist = await this.artistService.findArtist(user.id); 
-            //if (artist) {
-            //    payload.artistId = artist.id;
-            //}
-            // If user has enabled 2FA and have the secret key then
-            if (user.enable2FA && user.twoFASecret) { //1.
-                // sends the validateToken request link
-                // else otherwise sends the json web token in the response
-                return { //2.
-                validate2FA: 'http://localhost:3000/auth/validate-2fa',
+            
+            if (user.enable2FA && user.twoFASecret) { 
+            
+                return { 
+                validate2FA: 'http://localhost:3000/validate-2fa',
                 message:
                 'Please send the one-time password/token from your Google Authenticator App',
                 };
