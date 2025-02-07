@@ -1,0 +1,49 @@
+### Sign up user
+POST http://localhost:3000/signup
+Content-Type: application/json
+
+{
+"firstName": "Great",
+"lastName": "Theophilus",
+"email": "geat.theophilus@gmail.com",
+"password": "1234567"
+}
+
+### Login User
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+"email": "geat.theophilus@gmail.com",
+"password": "1234567"
+}
+
+### Profile
+GET http://localhost:3000/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdlYXQudGhlb3BoaWx1c0BnbWFpbC5jb20iLCJ1c2VySWQiOjEsImlhdCI6MTczODg4Njg0NywiZXhwIjoxNzM4OTczMjQ3fQ.FgAxbh1QzbcxXSli7sS4FiDVZfP35skpbRSzVaPjCsE
+
+### Send notification
+POST http://localhost:3000/manager/update-service-charge
+Content-Type: application/json
+
+{
+"charge": 2000
+}
+
+### Enable 2FA Authentication
+GET http://localhost:3000/enable-2fa
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdlYXQudGhlb3BoaWx1c0BnbWFpbC5jb20iLCJ1c2VySWQiOjEsImlhdCI6MTczODg4Njg0NywiZXhwIjoxNzM4OTczMjQ3fQ.FgAxbh1QzbcxXSli7sS4FiDVZfP35skpbRSzVaPjCsE
+
+### Validate 2FA Token
+POST http://localhost:3000/validate-2fa
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdlYXQudGhlb3BoaWx1c0BnbWFpbC5jb20iLCJ1c2VySWQiOjEsImlhdCI6MTczODg4Njg0NywiZXhwIjoxNzM4OTczMjQ3fQ.FgAxbh1QzbcxXSli7sS4FiDVZfP35skpbRSzVaPjCsE
+Content-Type: application/json
+
+{
+"token": "013835"
+}
+
+
+### Disable 2FA
+GET http://localhost:3000/disable-2fa
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdlYXQudGhlb3BoaWx1c0BnbWFpbC5jb20iLCJ1c2VySWQiOjEsImlhdCI6MTczODg4Njg0NywiZXhwIjoxNzM4OTczMjQ3fQ.FgAxbh1QzbcxXSli7sS4FiDVZfP35skpbRSzVaPjCsE
